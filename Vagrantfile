@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
     vm1.vm.network "forwarded_port", guest: 22, host: 2222
     vm1.vm.network "public_network"
     vm1.vm.provision "shell", inline: <<-SHELL
+      echo "hello"
       sudo yum install httpd wget unzip -y
       sudo systemctl enable httpd
       sudo systemctl start httpd
