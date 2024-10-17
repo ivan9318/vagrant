@@ -21,5 +21,8 @@ Vagrant.configure("2") do |config|
     sql.vm.network "forwarded_port", guest: 22, host: 2223  # Cambiar el puerto
     #sql.vm.network "public_network"
   end
+      config.vm.define "web" do |web|
+        web.vm.box = "apache"
+  end
 end
 
